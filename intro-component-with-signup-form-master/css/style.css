@@ -1,0 +1,293 @@
+:root {
+  --clr-primary-100: hsl(0, 100%, 74%);
+
+  --clr-secondary-100: hsl(0, 0%, 100%);
+  --clr-secondary-200: hsl(154, 59%, 51%);
+  --clr-secondary-250: hsl(154, 68%, 37%);
+  --clr-secondary-300: hsl(248, 32%, 49%);
+  --clr-secondary-400: hsl(246, 25%, 77%);
+  --clr-secondary-500: hsl(249, 10%, 26%, 0.2);
+
+  --ff-base: "Poppins", sans-serif;
+
+  --fw-light: 400;
+  --fw-regular: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  --fs-base: 16px;
+
+  --fs-200: 0.5625rem;
+  --fs-300: 0.7625rem;
+  --fs-400: 0.9275rem;
+  --fs-500: 1rem;
+  --fs-600: 1.625rem;
+  --fs-900: 2.5rem;
+
+  --m-1: 1rem;
+  --m-2: 2rem;
+  --mb: 4rem;
+  --pd: 1rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  font-size: var(--fs-base);
+  font-family: var(--ff-base);
+  background: url(/images/bg-intro-mobile.png) var(--clr-primary-100);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 2rem;
+  text-align: center;
+}
+
+.header {
+  margin-top: 4rem;
+  color: var(--clr-secondary-100);
+}
+
+.header h1 {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--m-1);
+}
+
+.header p {
+  font-weight: var(--fw-light);
+  font-size: var(--fs-500);
+  margin-bottom: var(--mb);
+}
+
+.card {
+  border-radius: 0.5rem;
+  padding: var(--pd);
+  box-shadow: 0px 7px 0px var(--clr-secondary-500);
+  margin-bottom: var(--m-2);
+  max-width: 100%;
+}
+
+.sub-info {
+  display: flex;
+  justify-content: center;
+  color: var(--clr-secondary-100);
+  background-color: var(--clr-secondary-300);
+}
+
+.sub-info h2 {
+  text-wrap: balance;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-secondary-100);
+  background-color: var(--clr-secondary-300);
+
+  span {
+    font-weight: var(--fw-light);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--clr-secondary-100);
+}
+
+.form-group form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  max-width: 100%;
+}
+
+.input-control input {
+  border: 1px solid var(--clr-secondary-500);
+  padding: var(--pd);
+  border-radius: 0.5rem;
+  font-weight: var(--fw-semi-bold);
+  width: 100%;
+  text-indent: 20px;
+}
+
+.input-control.error input {
+  border-color: var(--clr-primary-100);
+}
+
+.input-control .error {
+  font-style: italic;
+}
+
+.error-icon {
+  display: none;
+  position: absolute;
+  right: 5%;
+  transform: translateY(55%);
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-block: 0.2rem;
+  color: var(--clr-primary-100);
+  font-size: var(--fs-300);
+}
+
+.form-group input:focus {
+  outline: 0;
+  border-color: var(--clr-secondary-300);
+}
+
+::placeholder {
+  font-weight: var(--fw-semi-bold);
+}
+
+button {
+  cursor: pointer;
+  font-weight: var(--fw-light);
+  background-color: var(--clr-secondary-200);
+  border: none;
+  text-transform: uppercase;
+  color: var(--clr-secondary-100);
+  padding: var(--pd);
+  border-radius: 0.5rem;
+  box-shadow: 0px 5px 0px var(--clr-secondary-250);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.form-group span {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-light);
+  color: var(--clr-secondary-400);
+
+  a {
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-100);
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background-image: url(/images/bg-intro-desktop.png);
+    background-color: var(--clr-primary-100);
+    background-position: center;
+  }
+
+  main {
+    display: grid;
+    align-items: center;
+    place-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    /* width: 100vw; */
+  }
+
+  section {
+    display: grid;
+    place-content: center;
+    /* max-width: 500px; */
+  }
+
+  .card {
+    padding-inline: 5rem;
+  }
+
+  .header {
+    max-width: 500px;
+
+    h1 {
+      line-height: 1.2;
+    }
+  }
+
+  .card-wrapper {
+    max-width: 600px;
+    grid-column: 2;
+  }
+
+  .header {
+    text-align: left;
+
+    h1 {
+      font-size: var(--fs-900);
+    }
+  }
+
+  .form-group {
+    padding: 2rem;
+  }
+
+  .form-group span {
+    font-size: var(--fs-200);
+  }
+}
